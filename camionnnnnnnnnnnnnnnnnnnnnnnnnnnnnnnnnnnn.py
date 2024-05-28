@@ -1,0 +1,47 @@
+print("Bienvenido al sistema de carga de camiones")
+print("Recuerda que solo puedes registrar 20 camiones por día")
+
+nombre = input("Ingresa tu nombre: ")
+identificacion = input("Ingresa tu identificación: ")
+
+contador = 1
+carga = 20
+camiones_cargados = 0
+
+while camiones_cargados < carga:
+    capacidad = int(input(f"Ingrese la capacidad del camion {contador} en kg (debe estar entre 180000 y 280000): "))
+    if not (180000 <= capacidad <= 280000):
+        print("La capacidad máxima de la carga debe estar entre 180000 y 280000 kg. Intente nuevamente.")
+        continue
+
+    while capacidad > 0:
+        saco = int(input("Ingrese el peso de la saca en kg (debe estar entre 3000 y 9000): "))
+        if not (3000 <= saco <= 9000):
+            print("El peso debe estar entre 3000 y 9000 kg. Intente nuevamente.")
+            continue
+
+        if saco <= capacidad:
+            print("Se cargó la saca al camión.")
+            capacidad -= saco
+            
+        else:
+            print("No se puede cargar la saca porque excede la capacidad del camión.")
+            break
+        otro=input("¿Desea agregar otra saca? (S/N): ")
+        if otro.upper()=="N":
+            print("Se han cargado las sacas")
+            break
+
+    camiones_cargados += 1
+    contador += 1
+
+    if camiones_cargados == carga:
+        print("Se han cargado todos los camiones de hoy.")
+        break
+
+    siguiente = input("¿Desea cargar otro camión? (S/N): ")
+    if siguiente.upper() == "N":
+        print("Se han cargado todos los camiones.")
+        break
+
+print("Proceso de carga finalizado.")
