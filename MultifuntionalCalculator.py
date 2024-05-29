@@ -54,8 +54,7 @@ print("3: Conversión de temperatura (Celsius a Fahrenheit)")
 print("4: Calcular IMC")
 print("5: Conversión de unidades de medida (cm a mt, mt a cm, mt a km, km a mt)")
 print("6: Conversión de unidades de tiempo (Segundos a minutos, minutos a horas, horas a minutos y segundos)")
-else:
-print("Opción no válida.")
+
 calculadora_seleccionada = int(input("Seleccione la calculadora que desea usar: "))
 
 if calculadora_seleccionada == 1:
