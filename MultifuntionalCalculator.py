@@ -24,6 +24,20 @@ def conversion_temperatura(celsius):
 def calcular_imc(peso, altura):
     return  peso/(altura*altura)
 
+def categoria_imc(imc):
+  if imc < 18.5:
+    return "Bajo peso"
+  elif 18.5 <= imc <= 24.9:
+        return "Peso normal"
+  elif 25.0 <= imc <= 29.9:
+    return "Sobrepeso"
+  elif 30.0 <= imc <= 34.9:
+    return "Obesidad Clase I"
+  elif 35.0 <= imc <= 39.9:
+    return "Obesidad Clase II"
+  else:
+    return "Obesidad Clase III (Obesidad severa)"
+
 def conversion_cm_mt(cm):
     return cm / 100
 
@@ -94,7 +108,8 @@ elif calculadora_seleccionada == 4:
     peso = float(input("Ingrese su peso en kilogramos: "))
     altura = float(input("Ingrese su altura en metros: "))
     imc = calcular_imc(peso, altura)
-    print(f"Su IMC es: {imc:.2f}")
+    categoria = categoria_imc(imc)
+  print(f"Su IMC es: {imc:.2f}, lo cual corresponde a {categoria}.") 
 
 elif calculadora_seleccionada == 5:
     conversion_unidades = input("Seleccione la conversión: \n1. cm a mt\n2. mt a cm\n3. mt a km\n4. km a mt\n")
