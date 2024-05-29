@@ -22,7 +22,7 @@ def conversion_temperatura(celsius):
     return celsius * 9/5 + 32
 
 def calcular_imc(peso, altura):
-    return  peso/altura*altura
+    return  peso/(altura*altura)
 
 def conversion_cm_mt(cm):
     return cm / 100
