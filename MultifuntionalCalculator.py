@@ -22,7 +22,7 @@ def conversion_temperatura(celsius):
     return celsius * 9/5 + 32
 
 def calcular_imc(peso, altura):
-    return  (altura**2) / peso 
+    return  peso/altura*altura
 
 def conversion_cm_mt(cm):
     return cm / 100
@@ -79,7 +79,7 @@ elif calculadora_seleccionada == 2:
     if operacion_numerica == '1':
         decimal = int(input("Ingrese el número decimal: "))
         print(f"Binario: {decimal_a_binario(decimal)}")
-    elif operacion_numerica == 2:
+    elif operacion_numerica == '2':
         binario = input("Ingrese el número binario: ")
         print(f"Decimal: {binario_a_decimal(binario)}")
     else:
